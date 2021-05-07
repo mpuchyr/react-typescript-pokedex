@@ -19,3 +19,12 @@ const getPokemon = async (id: number): Promise<IPokemon> => {
 
     return pokemonToReturn
 }
+
+export const fetchPokemonList = (numOfPokemon: number): IPokemon[] => {
+   let pokemonList: IPokemon[] = []
+   for (let i = 1; i <= numOfPokemon; i++) {
+       const mon: any = getPokemon(i)
+       pokemonList.push(mon)
+   }
+   return pokemonList
+}
