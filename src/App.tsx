@@ -1,9 +1,13 @@
-import React from 'react';
+import PokemonList from './components/PokemonList';
 
 function App() {
+
   return (
     <div className="App">
-      <p>Pokemon</p>
+      <p>Pokedex</p>
+
+      <PokemonList />
+
     </div>
   );
 }
