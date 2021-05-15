@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { IPokemonList } from '../Interface/Interfaces';
 import PokemonDisplay from './PokemonDisplay';
+import PokeballLoader from './PokeballLoader';
 
 
 
@@ -9,23 +10,23 @@ const PokemonList = () => {
     const [loading, setLoading] = useState<Boolean> (true)
 
 
-    useEffect(() => {
-        const fetchPokemon = (numOfPokemon: number): void => {
-            try {
-                fetch(`https://pokeapi.co/api/v2/pokemon?limit=${numOfPokemon}`)
-                .then(res => res.json())
-                .then(data => {
-                    setPokemon(data.results)
-                    setLoading(false)
-                })
-            } catch {
-                console.log("An error has occurred")
-            }
+    // useEffect(() => {
+    //     const fetchPokemon = (numOfPokemon: number): void => {
+    //         try {
+    //             fetch(`https://pokeapi.co/api/v2/pokemon?limit=${numOfPokemon}`)
+    //             .then(res => res.json())
+    //             .then(data => {
+    //                 setPokemon(data.results)
+    //                 setLoading(false)
+    //             })
+    //         } catch {
+    //             console.log("An error has occurred")
+    //         }
 
-        }
+    //     }
 
-        fetchPokemon(251)
-    }, [])
+    //     fetchPokemon(251)
+    // }, [])
 
     const showPokemon = () => {
         if (pokemon) {
@@ -43,7 +44,8 @@ const PokemonList = () => {
     return (
         <div>
             {loading && <p>Loading...</p>}
-            {pokemon && showPokemon()}
+            {loading && <PokeballLoader />}
+            {/* {pokemon && showPokemon()} */}
         </div>
     )
 }
