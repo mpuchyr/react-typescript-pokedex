@@ -40,7 +40,7 @@ const PokemonDisplay = ({ name, url }: IPokemonList) => {
     }
     
     return (
-        <div>
+        <div className='pokemon-display'>
             {loading && <p>loading...</p>}
             {pokemon && displayPokemonInfo()}
         </div>
