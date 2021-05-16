@@ -31,9 +31,9 @@ const PokemonDisplay = ({ name, url }: IPokemonList) => {
             const sprite: string = pokemon.front_sprite
             console.log(sprite)
             return (
-                <>
-                    <h2>{pokemon.id}. {name}</h2>
+                <>    
                     <img src={sprite} />
+                    <h2>{pokemon.id}. {name}</h2>
                 </>
             )
         }   
