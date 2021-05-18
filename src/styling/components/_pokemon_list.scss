@@ -1,12 +1,35 @@
-.pokemon-list {
+.pokemon-list-container {
+    margin: 0 auto;
+    width: 800px;
+    
+
+}
+
+.pokemon-list-header {
+    align-content: center;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+
     h1 {
+        font-family: $Miltonian;
         color: $yellow;
         font-family: $Miltonian;
-        margin: $l-size, $m-size;
+        font-size: $l-size;
         text-shadow:
             -1px -1px 0 $blue,
             1px -1px 0 $blue,
             -1px 1px 0 $blue,
             1px 1px 0 $blue;
+        z-index: 2;
     }
 }
+
+.pokemon-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+}
+
+
+

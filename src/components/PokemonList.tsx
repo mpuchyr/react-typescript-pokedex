@@ -42,10 +42,14 @@ const PokemonList = () => {
 
 
     return (
-        <div className="pokemon-list">
-            <h1>Pokedex</h1>
-            {loading && <PokeballLoader />}
-            {pokemon && showPokemon()}
+        <div className="pokemon-list-container">
+            <div className="pokemon-list-header">
+                <h1>Pokedex</h1>
+            </div>
+            <div className="pokemon-list">
+                {loading && <PokeballLoader />}
+                {pokemon && showPokemon()}
+            </div>
         </div>
     )
 }
