@@ -26,9 +26,12 @@
 }
 
 .pokemon-list {
+    align-content: space-around;
     display: flex;
     flex-wrap: wrap;
-    width: 800px;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 75%;
 }
 
 

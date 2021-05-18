@@ -1,11 +1,12 @@
 .pokemon-display {
     border: 5px solid black;
+    border-radius: $s-size;
     box-sizing: border-box;
     font-family: $VT323;
     height: 150px;
-    margin: $s-size;
+    margin-top: $s-size;
     text-align: center;
-    width: 150px;
+    width: 33%;
 
     h2 {
         margin: auto;
