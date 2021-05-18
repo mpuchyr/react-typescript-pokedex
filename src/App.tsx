@@ -5,8 +5,6 @@ function App() {
 
   return (
     <div className="App">
-      <p>Pokedex</p>
-
       <PokemonList />
 
     </div>

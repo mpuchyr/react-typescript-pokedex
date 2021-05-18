@@ -1,0 +1,12 @@
+.pokemon-list {
+    h1 {
+        color: $yellow;
+        font-family: $Miltonian;
+        margin: $l-size, $m-size;
+        text-shadow:
+            -1px -1px 0 $blue,
+            1px -1px 0 $blue,
+            -1px 1px 0 $blue,
+            1px 1px 0 $blue;
+    }
+}

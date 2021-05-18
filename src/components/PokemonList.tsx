@@ -43,6 +43,7 @@ const PokemonList = () => {
 
     return (
         <div className="pokemon-list">
+            <h1>Pokedex</h1>
             {loading && <PokeballLoader />}
             {pokemon && showPokemon()}
         </div>
