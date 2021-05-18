@@ -3,7 +3,7 @@
     border: 5px solid black;
     border-radius: $s-size;
     box-sizing: border-box;
-    filter: drop-shadow(2px 2px 0.75rem black);
+    filter: drop-shadow(3px 10px 0.75rem black);
     font-family: $VT323;
     height: 150px;
     margin-top: $s-size;
@@ -16,7 +16,7 @@
 
     img {
         display: block;
-        filter: drop-shadow(2px 2px 0.75rem black);
+        filter: drop-shadow(7px 5px 0.75rem black);
         margin: auto;
     }
 }
