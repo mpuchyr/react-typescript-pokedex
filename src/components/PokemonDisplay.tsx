@@ -4,6 +4,7 @@ import { IPokemonList, IPokemon } from '../Interface/Interfaces';
 const PokemonDisplay = ({ name, url }: IPokemonList): React.ReactElement => {
     const [pokemon, setPokemon] = useState<IPokemon | null>(null)
     const [loading, setLoading] = useState<Boolean>(true)
+    const [componentClass, setComponentClass] = useState<string>('pokemon-display')
 
     useEffect(() => {
         const catchPokemon = (): void => {
@@ -38,9 +39,17 @@ const PokemonDisplay = ({ name, url }: IPokemonList): React.ReactElement => {
             )
         }   
     }
+
+    const handleClick = () => {
+        if (componentClass === 'pokemon-display') {
+            setComponentClass('large-pokemon-display')
+        } else {
+            setComponentClass('pokemon-display')
+        }
+    }
     
     return (
-        <div className='pokemon-display'>
+        <div className={componentClass} onClick={handleClick}>
             {loading && <p>loading...</p>}
             {pokemon && displayPokemonInfo()}
         </div>
