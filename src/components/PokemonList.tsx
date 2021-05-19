@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IPokemonList } from '../Interface/Interfaces';
 import PokemonDisplay from './PokemonDisplay';
 import PokeballLoader from './PokeballLoader';
 
 
 
-const PokemonList = () => {
+const PokemonList = (): React.ReactElement => {
     const [pokemon, setPokemon] = useState<IPokemonList[] | null>(null)
     const [loading, setLoading] = useState<Boolean> (true)
 

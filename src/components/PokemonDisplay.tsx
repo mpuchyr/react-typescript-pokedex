@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { IPokemonList, IPokemon } from '../Interface/Interfaces';
 
-const PokemonDisplay = ({ name, url }: IPokemonList) => {
+const PokemonDisplay = ({ name, url }: IPokemonList): React.ReactElement => {
     const [pokemon, setPokemon] = useState<IPokemon | null>(null)
     const [loading, setLoading] = useState<Boolean>(true)
 
@@ -25,7 +25,7 @@ const PokemonDisplay = ({ name, url }: IPokemonList) => {
         catchPokemon()
     },[])
 
-    const displayPokemonInfo = () => {
+    const displayPokemonInfo = (): React.ReactNode => {
         if (pokemon) {
             const name: string = pokemon.name[0].toUpperCase() + pokemon.name.slice(1, )
             const sprite: string = pokemon.front_sprite
