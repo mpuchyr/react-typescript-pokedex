@@ -44,7 +44,7 @@ const PokemonList = () => {
     return (
         <div className="pokemon-list-container">
             <div className="pokemon-list-header">
-                <h1>Pokedex</h1>
+                <h1>Pokédex</h1>
             </div>
             <div className="pokemon-list">
                 {loading && <PokeballLoader />}
