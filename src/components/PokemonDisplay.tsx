@@ -30,14 +30,27 @@ const PokemonDisplay = ({ name, url }: IPokemonList): React.ReactElement => {
         if (pokemon) {
             const name: string = pokemon.name[0].toUpperCase() + pokemon.name.slice(1, )
             const sprite: string = pokemon.front_sprite
-            console.log(sprite)
             return (
                 <>    
                     <img src={sprite} />
                     <h2>{pokemon.id}. {name}</h2>
+                    {componentClass === 'large-pokemon-display' && displayPokemonTypes()}
                 </>
             )
         }   
+    }
+
+    const displayPokemonTypes = (): React.ReactNode => {
+        return (
+            <ul>
+                {pokemon?.types.map(monType => {
+                    if (monType) {console.log(monType.type.name)}
+                    return (
+                        <li key={monType.type.name}>{monType.type.name}</li>
+                    )
+                })}
+            </ul>
+        )
     }
 
     const handleClick = () => {

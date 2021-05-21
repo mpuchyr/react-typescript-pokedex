@@ -3,7 +3,7 @@ export interface IPokemon {
     name: string;
     front_sprite: string;
     front_shiny: string;
-    types: string[];
+    types: any[];
 }
 
 export interface IPokemonList {
