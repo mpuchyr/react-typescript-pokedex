@@ -5,6 +5,7 @@ const PokemonDisplay = ({ name, url }: IPokemonList): React.ReactElement => {
     const [pokemon, setPokemon] = useState<IPokemon | null>(null)
     const [loading, setLoading] = useState<Boolean>(true)
     const [componentClass, setComponentClass] = useState<string>('pokemon-display')
+    const [spriteToDisplay, setSpriteToDisplay] = useState<string>('')
 
     useEffect(() => {
         const catchPokemon = (): void => {
@@ -19,6 +20,7 @@ const PokemonDisplay = ({ name, url }: IPokemonList): React.ReactElement => {
                         types: pkmn.types
                     }
                     setPokemon(mon)
+                    setSpriteToDisplay(mon.front_sprite)
                     setLoading(false)
                 })
         }
@@ -29,10 +31,10 @@ const PokemonDisplay = ({ name, url }: IPokemonList): React.ReactElement => {
     const displayPokemonInfo = (): React.ReactNode => {
         if (pokemon) {
             const name: string = pokemon.name[0].toUpperCase() + pokemon.name.slice(1, )
-            const sprite: string = pokemon.front_sprite
+            // const sprite: string = pokemon.front_sprite
             return (
                 <>    
-                    <img src={sprite} />
+                    <img src={spriteToDisplay} />
                     <h2>{pokemon.id}. {name}</h2>
                     {componentClass === 'large-pokemon-display' && displayPokemonTypes()}
                 </>
@@ -52,13 +54,14 @@ const PokemonDisplay = ({ name, url }: IPokemonList): React.ReactElement => {
         )
     }
 
-    const handleClick = () => {
+    const handleClick = (): void => {
         if (componentClass === 'pokemon-display') {
             setComponentClass('large-pokemon-display')
         } else {
             setComponentClass('pokemon-display')
         }
     }
+
     
     return (
         <div className={componentClass} onClick={handleClick}>
