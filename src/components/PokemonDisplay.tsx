@@ -44,7 +44,6 @@ const PokemonDisplay = ({ name, url }: IPokemonList): React.ReactElement => {
         return (
             <ul>
                 {pokemon?.types.map(monType => {
-                    if (monType) {console.log(monType.type.name)}
                     return (
                         <li key={monType.type.name}>{monType.type.name}</li>
                     )
