@@ -1,7 +1,7 @@
 .pokemon-list-container {
     margin: 0 auto;
+    height: 100%;
     width: 800px;
-    
 
 }
 
@@ -26,11 +26,12 @@
 }
 
 .pokemon-list {
-    align-content: space-around;
+    border-radius: $s-size;
     display: flex;
+    height: 850px;
     flex-wrap: wrap;
-    justify-content: flex-start;
     margin: 0 auto;
+    overflow-y: scroll;
     width: 75%;
 }
 

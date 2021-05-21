@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { IPokemonList, IPokemon } from '../Interface/Interfaces';
 
-const PokemonDisplay = ({ name, url }: IPokemonList): React.ReactElement => {
+const PokemonDisplay = ({ name, url, setMainPokemon }: IPokemonList): React.ReactElement => {
     const [pokemon, setPokemon] = useState<IPokemon | null>(null)
     const [loading, setLoading] = useState<Boolean>(true)
     const [componentClass, setComponentClass] = useState<string>('pokemon-display')
@@ -31,7 +31,6 @@ const PokemonDisplay = ({ name, url }: IPokemonList): React.ReactElement => {
     const displayPokemonInfo = (): React.ReactNode => {
         if (pokemon) {
             const name: string = pokemon.name[0].toUpperCase() + pokemon.name.slice(1, )
-            // const sprite: string = pokemon.front_sprite
             return (
                 <>    
                     <img src={spriteToDisplay} />
@@ -64,7 +63,7 @@ const PokemonDisplay = ({ name, url }: IPokemonList): React.ReactElement => {
 
     
     return (
-        <div className={componentClass} onClick={handleClick}>
+        <div className={componentClass}>
             {loading && <p>loading...</p>}
             {pokemon && displayPokemonInfo()}
         </div>

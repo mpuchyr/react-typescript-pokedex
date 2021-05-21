@@ -5,7 +5,7 @@ import PokeballLoader from './PokeballLoader';
 
 
 
-const PokemonList = (): React.ReactElement => {
+const PokemonList = ({ setMainPokemon }: any): React.ReactElement => {
     const [pokemon, setPokemon] = useState<IPokemonList[] | null>(null)
     const [loading, setLoading] = useState<Boolean> (true)
 
@@ -32,7 +32,7 @@ const PokemonList = (): React.ReactElement => {
         if (pokemon) {
             return pokemon.map((pkmn, index) => {
                 return (
-                    <PokemonDisplay key={index+1} name={pkmn.name} url={pkmn.url}/>
+                    <PokemonDisplay key={index+1} name={pkmn.name} url={pkmn.url} setMainPokemon={setMainPokemon}/>
                 )
             })
         }
