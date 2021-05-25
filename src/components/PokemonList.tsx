@@ -6,10 +6,11 @@ import LargePokemonDisplay from './LargePokemonDisplay';
 
 
 
-const PokemonList = ({ setMainPokemon }: any): React.ReactElement => {
+const PokemonList = (): React.ReactElement => {
     const [pokemon, setPokemon] = useState<IPokemonList[] | null>(null)
     const [loading, setLoading] = useState<Boolean> (true)
     const [pokemonInfo, setPokemonInfo] = useState<IPokemon>({ name: '', id: 0, types: [''], front_shiny: '', front_sprite: ''})
+
 
 
     useEffect(() => {
@@ -34,7 +35,7 @@ const PokemonList = ({ setMainPokemon }: any): React.ReactElement => {
         if (pokemon) {
             return pokemon.map((pkmn, index) => {
                 return (
-                    <PokemonDisplay key={index+1} name={pkmn.name} url={pkmn.url} fn={setPokemonInfo}/>
+                    <PokemonDisplay key={index+1} name={pkmn.name} url={pkmn.url} setPokemonInfo={setPokemonInfo}/>
                 )
             })
         }
@@ -48,6 +49,7 @@ const PokemonList = ({ setMainPokemon }: any): React.ReactElement => {
             <div className="pokemon-list-header">
                 <h1>Pokédex</h1>
             </div>
+            {console.log(pokemonInfo)}
             <LargePokemonDisplay pokemonInfo={pokemonInfo}/>
             <div className="pokemon-list">
                 {loading && <PokeballLoader />}

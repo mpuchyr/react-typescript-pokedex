@@ -4,11 +4,11 @@ export interface IPokemon {
     front_sprite: string;
     front_shiny: string;
     types: any[];
-    fn?: any
+    setPokemonInfo?: any
 }
 
 export interface IPokemonList {
     name: string;
     url: string;
-    fn?: any
+    setPokemonInfo?: any
 }

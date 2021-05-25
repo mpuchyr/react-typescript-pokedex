@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { IPokemonList, IPokemon } from '../Interface/Interfaces';
 
-const PokemonDisplay = ({ name, url }: IPokemonList, fn: any): React.ReactElement => {
+const PokemonDisplay = ({ name, url, setPokemonInfo }: IPokemonList): React.ReactElement => {
     const [pokemon, setPokemon] = useState<IPokemon | null>(null)
     const [loading, setLoading] = useState<Boolean>(true)
     const [componentClass, setComponentClass] = useState<string>('pokemon-display')
@@ -63,7 +63,7 @@ const PokemonDisplay = ({ name, url }: IPokemonList, fn: any): React.ReactElemen
 
     
     return (
-        <div className={componentClass}>
+        <div className={componentClass} onClick={() => setPokemonInfo(pokemon)}>
             {loading && <p>loading...</p>}
             {pokemon && displayPokemonInfo()}
         </div>
