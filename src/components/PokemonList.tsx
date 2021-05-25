@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { IPokemonList } from '../Interface/Interfaces';
+import { IPokemon, IPokemonList } from '../Interface/Interfaces';
 import PokemonDisplay from './PokemonDisplay';
 import PokeballLoader from './PokeballLoader';
+import LargePokemonDisplay from './LargePokemonDisplay';
 
 
 
 const PokemonList = ({ setMainPokemon }: any): React.ReactElement => {
     const [pokemon, setPokemon] = useState<IPokemonList[] | null>(null)
     const [loading, setLoading] = useState<Boolean> (true)
+    const [clickedPokemon, setClickedPokemon] = useState<IPokemon | null>(null)
 
 
     useEffect(() => {
@@ -46,6 +48,7 @@ const PokemonList = ({ setMainPokemon }: any): React.ReactElement => {
             <div className="pokemon-list-header">
                 <h1>Pokédex</h1>
             </div>
+            <LargePokemonDisplay />
             <div className="pokemon-list">
                 {loading && <PokeballLoader />}
                 {pokemon && showPokemon()}
