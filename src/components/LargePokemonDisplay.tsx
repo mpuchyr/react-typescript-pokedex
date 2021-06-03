@@ -23,14 +23,17 @@ const LargePokemonDisplay = ( {pokemonInfo}: any): React.ReactElement => {
         return (
             <div className="detailed-pokemon-info">
                 <img src={sprite} onClick={handleSpriteChange}/>
-                <h1>{pokemonInfo.id}. {pokemonInfo.name[0].toUpperCase() + pokemonInfo.name.slice(1, )}</h1>
-                <ul>
-                    {pokemonInfo.types.map((monType: any) => {
-                        return (
-                            <li>{monType.type.name}</li>
-                        )
-                    })}
-                </ul>
+                <div>
+                    <h1>{pokemonInfo.id}. {pokemonInfo.name[0].toUpperCase() + pokemonInfo.name.slice(1, )}</h1>
+                    <ul>
+                        {pokemonInfo.types.map((monType: any) => {
+                            return (
+                                <li>{monType.type.name}</li>
+                            )
+                        })}
+                    </ul>
+                </div>
+
             </div>
         )
 
