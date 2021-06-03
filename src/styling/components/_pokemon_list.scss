@@ -26,11 +26,13 @@
 }
 
 .pokemon-list {
+    border: 10px solid black;
     border-radius: $s-size;
     display: flex;
     height: 495px;
     flex-wrap: wrap;
     margin: 25px auto 0 auto;
+    padding: 15px;
     overflow-y: scroll;
     width: 75%;
 
