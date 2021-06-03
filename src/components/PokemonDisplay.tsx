@@ -35,31 +35,31 @@ const PokemonDisplay = ({ name, url, setPokemonInfo }: IPokemonList): React.Reac
                 <>    
                     <img src={spriteToDisplay} />
                     <h2>{pokemon.id}. {name}</h2>
-                    {componentClass === 'large-pokemon-display' && displayPokemonTypes()}
+                    {/* {componentClass === 'large-pokemon-display' && displayPokemonTypes()} */}
                 </>
             )
         }   
     }
 
-    const displayPokemonTypes = (): React.ReactNode => {
-        return (
-            <ul>
-                {pokemon?.types.map(monType => {
-                    return (
-                        <li key={monType.type.name}>{monType.type.name}</li>
-                    )
-                })}
-            </ul>
-        )
-    }
+    // const displayPokemonTypes = (): React.ReactNode => {
+    //     return (
+    //         <ul>
+    //             {pokemon?.types.map(monType => {
+    //                 return (
+    //                     <li key={monType.type.name}>{monType.type.name}</li>
+    //                 )
+    //             })}
+    //         </ul>
+    //     )
+    // }
 
-    const handleClick = (): void => {
-        if (componentClass === 'pokemon-display') {
-            setComponentClass('large-pokemon-display')
-        } else {
-            setComponentClass('pokemon-display')
-        }
-    }
+    // const handleClick = (): void => {
+    //     if (componentClass === 'pokemon-display') {
+    //         setComponentClass('large-pokemon-display')
+    //     } else {
+    //         setComponentClass('pokemon-display')
+    //     }
+    // }
 
     
     return (

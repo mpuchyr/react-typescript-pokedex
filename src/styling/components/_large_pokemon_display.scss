@@ -1,0 +1,13 @@
+.detailed-pokemon-info {
+    background-color: lighten($dark-gray, 15%);
+    border: 5px solid black;
+    border-radius: $s-size;
+    font-family: $VT323;
+    font-size: $l-size;
+    margin: 0 auto;
+    width: 80%;
+
+    img {
+        height: 200px;
+    }
+}
